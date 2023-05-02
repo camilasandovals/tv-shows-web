@@ -20,7 +20,9 @@ export default function Login({setUser}) {
                 alert(data.message)
                 return
             }
-            setUser(data)
+            setUser(data.user);
+            localStorage.setItem("token", data.token)
+            
             navigate("/")
         })
         .catch(alert)
